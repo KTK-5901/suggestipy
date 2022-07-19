@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block results %}
+	{% with messages = get_flashed_messages(with_categories=true) %}
+    		{% if messages %}
+        		{% for category, message in messages %}
+            		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  						<strong>Holy guacamole! THE URL IS INAVLID.</strong> click <a href="https://wordpress.com/support/audio/spotify/" class="alert-link" target="_blank">here</a> to read the instructions
+					</div>
+        		{% endfor %}
+			{% else %}
+					<div class='results'>
+    					<h2 style='color: #000000'>Here Are the recommendation. Enjoy!</h2>
+							<div class = "break-medium"></div>
+        					{% for song in songs %}
+        					<a  href={{song[1]}} style="text-decoration:none;color:black" target="_blank" ><p class='song' style="font-size: 11pt">{{ song[0]}} </p> </a>
+        					{% endfor %}
+					</div>
+    		{% endif %}
+	{% endwith %}
+{% endblock %}
