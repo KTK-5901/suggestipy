@@ -1,7 +1,0 @@
-secret.txt
-.cache
-.ipynb_checkpoints/*
-*.zip
-.*
-*__pycache__*
-*.pyc
