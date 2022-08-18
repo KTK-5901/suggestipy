@@ -4,9 +4,10 @@ import re
 
 def uri_to_feature(uri):
 
-    cid = "2481a07aec484e1dabcc4b9926c3ac4f"
-    secret = "99803b830a0f4ec0a8acf3cde3d1e5eb"
-
+    with open("secret.txt") as f:
+        cid = f.readlines()[0][:-2]
+        secret = f.readlines()[1]
+        
     client_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
     sp = spotipy.Spotify(client_credentials_manager=client_manager)
 
